@@ -1,0 +1,95 @@
+.main_flowersSection {
+    .main_flowersSection_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        div:nth-child(1) {
+            font-family: "NotoSerifLight";
+            font-weight: 600;
+            font-size: 2.1rem;
+        }
+        div:nth-child(2) {
+            font-family: "CrimsonRoman";
+            font-size: 1rem;
+            color: rgb(134, 134, 134);
+        }
+    }
+    .main_flowersSection_products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 10px 70px;
+        box-sizing: border-box;
+        .main_product {
+            flex: 1 1 calc((100%) / 4); /* Рассчитывает ширину для 4 продуктов с учётом gap */
+            max-width: calc((100% - 60px) / 4);
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            gap: 10px;
+            border-radius: 5px;
+            a {
+                width: 100%;
+                height: 330px; /* Задаём пропорцию для изображения */
+                display: block;
+                img {
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #a49864;
+                border-radius: 30px;
+                border: none;
+                transition: 0.3s;
+                font-family: "NotCourierSans";
+                &:hover {
+                    color: rgb(105, 105, 105);
+                    background-color: rgb(212, 212, 212);
+                }
+            }
+            div:nth-child(2) {
+                font-family: "NotoSerifLight";
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            div:nth-child(3) {
+                font-family: "NotCourierSans";
+                font-weight: bold;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+    }
+    .main_flowersSection_divforallflowers {
+        display: flex;
+        justify-content: center;
+        button {
+            color: #a49864;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: white;
+            border: 1px solid #a49864;
+            transition: 0.3s;
+            font-family: "NotoSerifLight";
+            &:hover {
+                background-color: #a4986473;
+            }
+        }
+    }
+}
+
+.main_descriptionSection {
+    display: flex;
+}

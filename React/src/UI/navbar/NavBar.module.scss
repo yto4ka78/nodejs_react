@@ -1,0 +1,102 @@
+.NavBar_Main {
+    .NavBar_Main_Section0 {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        background-color: rgb(205, 205, 205);
+        font-family: "JacquesFrancois";
+        font-size: 1rem;
+    }
+    .NavBar_Main_Section1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 20px;
+        .NavBar_Main_Section1_leftParty {
+            display: flex;
+            font-family: "JacquesFrancois", "Sans-serif";
+            font-size: 0.8rem;
+            width: 250px;
+            flex-direction: column;
+            justify-content: center;
+            img {
+                width: 20px;
+                margin-right: 5px;
+            }
+        }
+        .NavBar_Main_Section1_centralParty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.5rem;
+            font-family: "Georgia", "sans-serif";
+            div:nth-child(2) {
+                font-size: 0.9rem;
+            }
+        }
+        .NavBar_Main_Section1_rightParty {
+            font-family: "TimesNewRoman", "sans-serif";
+            display: flex;
+            min-width: 250px;
+            justify-content: space-around;
+            align-items: center;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .NavBar_Main_Section1_rightParty_basket {
+                display: flex;
+                align-items: center;
+                transition: 0.3s;
+                height: 100%;
+                div {
+                    margin: 0px 10px;
+                }
+                img {
+                    width: 20px;
+                }
+                &:hover {
+                    height: 60%;
+                    background-color: rgb(242, 242, 242);
+                    border: 1px solid rgb(168, 168, 168);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .NavBar_Main_Section2 {
+        display: flex;
+        height: 60px;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        div {
+            height: 35px;
+            transition: 0.3s;
+            a {
+                text-decoration: none;
+                color: white;
+                margin: 10px;
+                font-size: 1.2rem;
+                font-family: "NotoSerifLight";
+                transition: 0.3s;
+            }
+            &:hover {
+                border-bottom: 1px solid #a49864;
+                a {
+                    color: #a49864;
+                }
+            }
+        }
+    }
+}
+
+//Styles for phone
+// @media (max-width: 1280px) {
+//     .NavBar_Main {
+//         display: flex;
+//         .NavBar_main_logo {
+//             & img {
+//             }
+//         }
+//     }
+// }
