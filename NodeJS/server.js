@@ -7,6 +7,8 @@ const { connectDB, sequelize, syncBD } = require("./config/db");
 connectDB();
 syncBD();
 
+app.use(express.json());
+
 const apiRoutes = require("./routes");
 app.use("/api", apiRoutes);
 

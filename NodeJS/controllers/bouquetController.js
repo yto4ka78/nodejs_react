@@ -3,6 +3,7 @@ const multer = require("multer");
 const { storage } = require("../middleware/cloudinary");
 const upload = multer({ storage });
 
+
 class BouquetController {
     static async createBouquet(req, res) {
         try {

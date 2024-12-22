@@ -4,10 +4,11 @@ import styles from "./main.module.scss";
 import { Link } from "react-router-dom";
 import bouqet from "../../assets/images/bouqet_1.jpg";
 import flowers from "../../assets/images/flowers.png";
+import map from "../../assets/images/map.png";
 
 const Main = () => {
     return (
-        <div >
+        <div>
             <Carousel />
             <div className={styles.main_flowersSection}>
                 <div className={styles.main_flowersSection_title}>
@@ -60,6 +61,31 @@ const Main = () => {
                     <button>Посмотреть все букеты</button>
                 </div>
             </div>
+
+            <div className={styles.main_contact_width}>
+                <div className={styles.main_contact}>
+                    <div className={styles.main_contact_firstdiv}>
+                        <div>Наш инстаграм</div>
+                        <a href="">@flowerAstana</a>
+                    </div>
+                    <div className={styles.main_contact_seconddiv}>
+                        <div>Магазин</div>
+                        <div>
+                            Наш магазин работает с 9:00 до 18:00, с возможностью
+                            учесть любое ваше пожелание касательно доставки
+                            цветов.Оставьте комментарий к заказу или свяжитесь
+                            напрямую с нами во телефону +77714661111
+                        </div>
+                        <a href="">ВЫБРАТЬ БУКЕТ</a>
+                    </div>
+                    <div className={styles.main_contact_thirddiv}>
+                        <a href="https://2gis.kz/almaty/firm/9429940000797834/76.953608%2C43.263831?m=76.952625%2C43.262932%2F15.99">
+                            <img src={map} alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div className={styles.main_descriptionSection}>
                 <div>
                     <p>Наш цветочный магазин — это место, где цветы оживают</p>
@@ -81,7 +107,6 @@ const Main = () => {
                     <img src={flowers} alt="photo" />
                 </div>
             </div>
-            <div>Контакты</div>
         </div>
     );
 };

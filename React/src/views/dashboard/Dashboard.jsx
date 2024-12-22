@@ -50,7 +50,6 @@ const Dashboard = () => {
                 data.append("photo", file);
             });
         }
-
         try {
             const response = await axios.post("/api/bouquet/create", data, {
                 headers: {

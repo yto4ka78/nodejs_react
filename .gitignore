@@ -1,2 +1,3 @@
 NODEJS/.env
 NodeJS/config/cloudinaryConfig.js
+NodeJS/middleware/variable.js

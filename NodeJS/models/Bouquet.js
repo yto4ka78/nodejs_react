@@ -24,14 +24,14 @@ const Bouqeut = sequelize.define("Bouquet", {
         allowNull: true,
     },
     imageUrl: {
-        type: DataTypes.TEXT, // Используем TEXT для хранения JSON
+        type: DataTypes.TEXT,
         allowNull: true,
         get() {
             const rawValue = this.getDataValue("imageUrl");
-            return rawValue ? JSON.parse(rawValue) : []; // Парсим JSON обратно в массив
+            return rawValue ? JSON.parse(rawValue) : []; 
         },
         set(value) {
-            this.setDataValue("imageUrl", JSON.stringify(value)); // Преобразуем массив в строку JSON
+            this.setDataValue("imageUrl", JSON.stringify(value)); 
         },
     },
 });
