@@ -1,39 +1,41 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("../config/db");
-
-const Bouqeut = sequelize.define("Bouquet", {
+module.exports = (sequelize, DataTypes) => {
+  const Bouquet = sequelize.define("Bouquet", {
     id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
     },
     name: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     description: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     price: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    composition: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     imageUrl: {
-        type: DataTypes.TEXT,
-        allowNull: true,
-        get() {
-            const rawValue = this.getDataValue("imageUrl");
-            return rawValue ? JSON.parse(rawValue) : []; 
-        },
-        set(value) {
-            this.setDataValue("imageUrl", JSON.stringify(value)); 
-        },
+      type: DataTypes.TEXT,
+      allowNull: true,
+      get() {
+        const rawValue = this.getDataValue("imageUrl");
+        return rawValue ? JSON.parse(rawValue) : [];
+      },
+      set(value) {
+        this.setDataValue("imageUrl", JSON.stringify(value));
+      },
     },
-});
+  });
 
-module.exports = Bouqeut;
+  Bouquet.associate = (models) => {
+    Bouquet.belongsToMany(models.Category, {
+      through: "BouquetCategory",
+      foreignKey: "bouquet_id",
+    });
+  };
+
+  return Bouquet;
+};

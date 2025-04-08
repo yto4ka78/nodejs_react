@@ -12,3 +12,5 @@ export const getUserFromToken = () => {
         return null;
     }
 };
+
+export default getUserFromToken;

@@ -1,95 +1,22 @@
-.createBouquet_main {
+.dashboard_main {
+    width: 1280px;
     margin: auto;
-    .createBouquet_main_error {
-        background-color: rgb(123, 0, 0);
-        font-size: 1rem;
-        font-family: "Georgia";
-    }
-    .createBouquet_main_form {
-        margin: auto;
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        label {
-            font-family: "NotCourierSans";
-            font-size: 1.2rem;
-        }
-        input,
-        textarea {
-            border: 1px solid;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        [id="photo"] {
-            display: none;
-        }
-        [For="photo"] {
-            margin-top: 10px;
-            text-align: center;
-            width: 30%;
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #888888;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .div_preview {
-            display: flex;
-            flex-wrap: wrap;
-            .preview {
-                display: flex;
-                justify-content: flex-end;
-                position: relative;
-                margin: 10px 10px 0px 0px;
-                width: 200px;
-                height: 200px; /* Убедитесь, что у контейнера есть высота для корректного отображения */
-
-                img {
-                    border-radius: 10px;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: 0.3s;
-                }
-
-                button {
-                    visibility: hidden; /* Элемент скрыт */
-                    opacity: 0; /* Прозрачный */
-                    transition: opacity 0.3s ease, visibility 0.3s ease;
-                    position: absolute;
-                    right: 5px;
-                    background-color: rgba(0, 0, 0, 0.6);
-                    color: white;
-                    border-radius: 50%;
-                    padding: 5px;
-                    cursor: pointer;
-                    border: 1px solid black;
-                    width: 20%;
-                }
-
-                &:hover button {
-                    visibility: visible; /* Делает элемент видимым */
-                    opacity: 1; /* Делает элемент непрозрачным */
-                    z-index: 5;
-                }
-                &:hover img {
-                    filter: brightness(50%);
-                }
-            }
-        }
-
+    .dashboard_main_navbar {
+        padding: 5px;
+        background-color: rgb(237, 237, 237);
+        margin: 10px 0px;
+        border-radius: 10px;
         button {
-            margin: 10px 0px;
-            padding: 5px;
-            border-radius: 10px;
-            color: white;
-            background-color: black;
-            width: 30%;
+            border: none;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #a49864;
+            margin: 0px 10px;
+            transition: 0.3s;
             font-family: "NotCourierSans";
+            &:hover {
+                color: black;
+            }
         }
     }
 }

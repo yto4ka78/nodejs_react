@@ -2,4 +2,5 @@
 Выполняем npm run build
 
 Потом заходим в cs NodeJS
-Выполняем node 
+Выполняем node server.js
+
