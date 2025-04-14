@@ -1,7 +1,11 @@
-NodeJS/.env
-NodeJS/config/cloudinaryConfig.js
-NodeJS/build
-NodeJS/migrations
-NodeJS/node_modules
-React/build
-React/node_modules
+server/.env
+server/config/cloudinaryConfig.js
+server/build
+server/migrations
+server/node_modules
+client/build
+client/node_modules
+server/migration
+Photos
+Магазин цветов
+Полезное

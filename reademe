@@ -1,6 +1,0 @@
-Для запуска проекта заходим в cd react
-Выполняем npm run build
-
-Потом заходим в cs NodeJS
-Выполняем node server.js
-
