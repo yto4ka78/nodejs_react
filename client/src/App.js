@@ -37,14 +37,6 @@ function App() {
             <Route path="/confidentiality" element={<Confidentiality />} />
             <Route path="/login" element={<Registration />} />
             <Route
-              path="/createbouquet"
-              element={
-                <ProtectedRoute allowedRoles={["root"]}>
-                  <CreateBouquet />
-                </ProtectedRoute>
-              }
-            />
-            <Route
               path="/profile"
               element={
                 <ProtectedRoute allowedRoles={["user", "root", "admin"]}>

@@ -9,7 +9,7 @@ const main = require("./main");
 const dashboard = require("./dashboard");
 
 router.use("/bouquet", bouquetRoutes);
-router.use("/registration", registrationRoutes);
+// router.use("/registration", registrationRoutes);
 router.use("/login", login);
 router.use("/logout", logout);
 router.use("/main", main);

@@ -99,7 +99,7 @@ const Registration = () => {
           </form>
         </div>
         {/* ЕСЛИ НУЖНО ДОБАВИТЬ РЕГИСТРАЦИЮ, ВОТ ФОРМА */}
-        <div className={styles.registration_main_regForm}>
+        {/* <div className={styles.registration_main_regForm}>
           <div>Зарегестрироваться</div>
           <form action="" onSubmit={handleSubmit}>
             <label htmlFor="regEmail">Почтовый адрес</label>
@@ -130,7 +130,7 @@ const Registration = () => {
               данных
             </label>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );

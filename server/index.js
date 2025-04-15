@@ -3,12 +3,32 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { connectDB, sequelize, syncBD } = require("./config/db");
+const cors = require("cors");
+const xss = require("xss-clean");
+const rateLimit = require("express-rate-limit");
 
 connectDB();
 syncBD();
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: {
+    error: "Слишком много запросов с этого IP, попробуйте позже.",
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
+app.use(
+  cors({
+    origin: "http://localhost",
+    credentials: true,
+  })
+);
 app.use(express.json());
+app.use(xss());
 
+app.use("/api", apiLimiter);
 const apiRoutes = require("./routes");
 app.use("/api", apiRoutes);
 

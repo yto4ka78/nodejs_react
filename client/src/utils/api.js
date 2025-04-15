@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  // baseURL: "https://anoliflowers.kz/api",
-  baseURL: "http://192.168.1.36:5000/api",
+  baseURL: "https://anoliflowers.kz/api",
+  //baseURL: "http://192.168.1.36:5000/api",
+  withCredentials: true,
 });
 
 api.interceptors.request.use((config) => {
