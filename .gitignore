@@ -1,5 +1,4 @@
 server/.env
-server/config/cloudinaryConfig.js
 server/build
 server/migrations
 server/node_modules
