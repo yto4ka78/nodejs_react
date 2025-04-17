@@ -1,6 +1,8 @@
 const db = require("../models");
 const User = db.User;
 require("dotenv").config();
+const { showError } = require("../middleware/errorTracker");
+
 const JWT_SECRET = process.env.JWT_SECRET;
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -31,7 +33,7 @@ class LoginController {
       );
       res.json({ token });
     } catch (err) {
-      console.error(err);
+      showError(error);
     }
   }
 
@@ -85,7 +87,7 @@ class LoginController {
       res
         .status(500)
         .json({ message: "Ошибка обновления формы", action: true });
-      console.error(error);
+      showError(error);
     }
   }
 }

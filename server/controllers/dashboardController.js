@@ -1,6 +1,6 @@
 const db = require("../models/");
 const Category = db.Category;
-const { storage } = require("../middleware/cloudinary");
+const { showError } = require("../middleware/errorTracker");
 const { Op } = require("sequelize");
 const {
   autoCleanupUploadIfLimitExceeded,
@@ -31,6 +31,7 @@ class DashboardController {
       });
     } catch (error) {
       res.status(500).json({ error });
+      showError(error);
     }
   }
 
@@ -43,7 +44,7 @@ class DashboardController {
         categories: categories,
       });
     } catch (error) {
-      console.error("Ошибка в getAllCategories:", error);
+      showError(error);
       res.status(500).json({ error });
     }
   }
@@ -72,7 +73,7 @@ class DashboardController {
 
       res.status(200).json({ message: "Категория удалена" });
     } catch (error) {
-      console.error("Ошибка при удалении категории:", error);
+      showError(error);
       res.status(500).json({ error: "Ошибка удаления" });
     }
   }
@@ -123,7 +124,7 @@ class DashboardController {
 
       return res.status(200).json({ message: "Категории обновлены успешно" });
     } catch (error) {
-      console.error("Ошибка контролера" + error);
+      showError(error);
     }
   }
 
@@ -178,7 +179,7 @@ class DashboardController {
         category: category,
       });
     } catch (error) {
-      console.error(error);
+      showError(error);
       return res.status(500).json({ message: "Ошибка сервера" });
     }
   }

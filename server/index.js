@@ -21,7 +21,7 @@ const apiLimiter = rateLimit({
 
 app.use(
   cors({
-    origin: "http://localhost",
+    origin: process.env.API_URL,
     credentials: true,
   })
 );

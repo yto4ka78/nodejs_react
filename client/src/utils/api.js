@@ -1,8 +1,8 @@
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const api = axios.create({
-  baseURL: "https://anoliflowers.kz/api",
-  //baseURL: "http://192.168.1.36:5000/api",
+  baseURL: REACT_APP_API_URL,
   withCredentials: true,
 });
 

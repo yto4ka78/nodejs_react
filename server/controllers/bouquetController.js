@@ -1,6 +1,7 @@
 const db = require("../models/");
 const Bouquet = db.Bouquet;
 const Category = db.Category;
+const { showError } = require("../middleware/errorTracker");
 const { extractPublicId } = require("../middleware/cloudinary");
 const cloudinary = require("../config/cloudinaryConfig");
 const {
@@ -31,7 +32,7 @@ class BouquetController {
         message: "Букет добавлен успешно",
       });
     } catch (error) {
-      // console.error("Ошибка добавления букета:", error);
+      showError(error);
       res.status(500).json({ error: "Ошибка при добавлении букета" });
     }
   }
@@ -46,7 +47,7 @@ class BouquetController {
       });
       res.status(200).json({ bouquets });
     } catch (error) {
-      console.error("Ошибка на уровне контроллера Букетов");
+      showError(error);
     }
   }
 
@@ -80,7 +81,7 @@ class BouquetController {
             const publicId = extractPublicId(url);
             await cloudinary.uploader.destroy(publicId);
           } catch (error) {
-            console.error(`Ошибка при удалении ${url}:`, error);
+            console.error(`Ошибка при удалении в контроллере ${url}:`, error);
           }
         });
         await Promise.all(deletePromises);
@@ -99,7 +100,7 @@ class BouquetController {
         message: "Букет сохранен",
       });
     } catch (error) {
-      console.error("Ошибка контроллера" + error);
+      showError(error);
     }
   }
 
@@ -123,7 +124,7 @@ class BouquetController {
       res.status(200).json({ message: "Букет удален" });
     } catch (error) {
       res.status(500).json({ message: "Ошибка удаления букета" });
-      console.error(error);
+      showError(error);
     }
   }
 }
