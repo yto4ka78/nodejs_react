@@ -14,9 +14,9 @@ const Footer = () => {
         </div>
         <div className={styles.footer_maindiv_secondcolumn}>
           <div>Контакты:</div>
-          <div>+77714661111</div>
-          <div>erik.sitnikov.fr@gmail.com</div>
-          <div>Город: Астана</div>
+          <div>+77075007006</div>
+          <div>akhmadovsv@gmail.com</div>
+          <div>Город: Алматы</div>
           <div>Адрес: Пелегримова 52</div>
         </div>
         <div className={styles.footer_maindiv_thirdcolumn}>

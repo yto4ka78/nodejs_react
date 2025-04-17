@@ -25,7 +25,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-item">
           <div> Посмотреть список всех букетов</div>
-          <Link to="/allCategories">Попробовать</Link>
+          <Link to="/allCategories">Перейти</Link>
           <img src={flower_2} className="d-block w-100" alt="..." />
         </div>
         {/* <div className="carousel-item">

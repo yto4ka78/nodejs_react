@@ -39,16 +39,18 @@ const NavBar = () => {
         <div className={styles.NavBar_Main_Section1_leftParty}>
           <div>
             <img src={phoneLogo} alt="" />
-            +77714661111
+            +77075007006
           </div>
           <div>
             {" "}
             <img src={mailLogo} alt="" />
-            erik.sitnikov.fr@gmail.com
+            akhmadovsv@gmail.com
           </div>
         </div>
         <div className={styles.NavBar_Main_Section1_centralParty}>
-          <div>ЦВЕТОЧНЫЙ ДОМ</div>
+          <a href="/">
+            <div>ЦВЕТОЧНЫЙ ДОМ</div>
+          </a>
           <a href="/">Главная страница</a>
         </div>
 
